@@ -6,60 +6,56 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   return (
-    <header className="bg-white "  >
-      <div id="NavegationBar" className=" flex flex-row pl-16 pr-16 h-navegationbar content-center items-center justify-between">
+    <header className="bg-white"  >
+      <div id="NavegationBar" className=" flex px-16 h-navegationbar w-auto content-center justify-between items-center text-xl text-third font-title">
 
-        <div id="SocialWebIcons" className="flex flex-row w-socialmediabox justify-between">
-          <Link href="/">
-            <Image
-              src="/fb-logo.png"
-              width={26}
-              height={26}
-            />
-          </Link>
-          <Link href="/">
-            <Image
-              src="/insta-logo.png"
-              width={26}
-              height={26}
-
-            />
-          </Link>
-
-
-
+        <div className="flex w-52 items-center">
+          <Image className="object-scale-down"
+            src="/LOGO MOSAICO HORIZONTAL.png"
+            width={5231}
+            height={1512}
+          />
         </div>
 
-        <div id="Tabs" className="flex flex-row w-tabsbox justify-around font-sans text-header text-primary">
+
+        <div id="PrimaryTabs" className="container w-auto  justify-around space-x-12">
           <Link href="/">
-            <a className="transition-all duration-75 ease-in-out hover:font-extrabold hover:text-secondary px-3">
-              INICIO
+            <a className="transition all duration-500 ease-in-out hover:text-secondary px-3">
+              Inicio
+                </a>
+          </Link>
+          <Link href="/proyectos">
+            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+              Proyectos
                 </a>
           </Link>
           <Link href="/">
-            <a className="transition-all duration-75 ease-in-out hover:font-extrabold hover:text-secondary px-3">
-              GALERÍA
+            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+              Sobre Nosotros
                 </a>
           </Link>
           <Link href="/">
-            <a className="transition-all duration-75 ease-in-out hover:font-extrabold hover:text-secondary px-3">
-              SOBRE NOSOTROS
-                </a>
-          </Link>
-          <Link href="/">
-            <a className="transition-all duration-75 ease-in-out hover:font-extrabold hover:text-secondary px-3">
-              CONTACTO
+            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+              Contacto
                 </a>
           </Link>
         </div>
 
-        <div id="CbServicios" className="flex flex-row w-cbservicios items-center justify-between font-sans text-header text-primary hover:text-secondary">
+        <div id="SecondaryTabs" className="container w-auto justify-around">
           <Link href="/">
-            <a >
-              NUESTROS SERVICIOS
+            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+              Nuestros Servicios
               </a>
           </Link>
-          <svg
+        </div>
+
+
+      </div>
+    </header >
+  );
+}
+
+{/* <svg
             className="transition hover:fill-current text-secondary hover:stroke-current stroke-1"
             xmlns="http://www.w3.org/2000/svg"
             height="26"
@@ -67,9 +63,8 @@ export default function Header() {
             width="26">
             <path d="M0 0h24v24H0z" fill="none" />
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-          </svg>
-        </div>
-        {/* <button
+          </svg> */}
+{/* <button
           className="flex items-center block px-3 py-2 text-white border border-white rounded "
           onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}
         >
@@ -83,12 +78,6 @@ export default function Header() {
           </svg>
                         
          </button> */}
-      </div>
-    </header >
-  );
-}
-
-
 
 // {/* <div className="flex flex-wrap items-center justify-center lg:container px-4 py-6 mx-auto md:flex-no-wrap md:px-6">
 //         <div className="flex flex-row">
