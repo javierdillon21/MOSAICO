@@ -37,15 +37,15 @@ export default function MostrarProyectos() {
     }, [])
 
     return (
-        <div className="flex h-auto w-auto justify-center">
-            <div className="flex justify-center items-center w-9/10 h-auto flex-wrap space-x-4 space-y-8">
+        <div className="flex w-auto justify-center mt-4">
+            <div className="grid grid-cols-4 w-5/6 gap-x-2 gap-y-6">
                 {miniaturas?.map((p) => {
                     return (
                         <div>
-                            <div className="flex flex-col w-1/5 h-miniatura self-center">
+                            <div className="grid font-title text-sm text-third">
                                 <Link href={`/${p.portada.idProyecto}`}>
                                     <a>
-                                        <Image className="object-scale-down object-center"
+                                        <Image className="object-scale-down object-center transition duration-500 ease-in-out transform hover:scale-110"
                                             src={p.portada.url}
                                             width={p.portada.dimensions.width}
                                             height={p.portada.dimensions.height}
@@ -53,7 +53,8 @@ export default function MostrarProyectos() {
                                     </a>
                                 </Link>
                                 <div>
-                                <p>{p.nombre}</p>
+                                <p className="text-secondary text-lg transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
+                                    {p.nombre}</p>
                                 <p>{p.categoria}</p>
                                 <p>{p.ubicacion}</p>
                             </div>
@@ -62,7 +63,7 @@ export default function MostrarProyectos() {
                         </div>
                     )
                 })}
-            </div>
+        </div>
         </div>
 
     )
