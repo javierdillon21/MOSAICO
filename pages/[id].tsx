@@ -130,7 +130,7 @@ export default function GetProyecto() {
                     {proyecto.encabezado.descripcion}</p>
             </div>
 
-            <div id="Cuerpo" className="flex flex-col w-auto justify-center space-y-14">
+            <div id="Cuerpo" className="flex flex-col w-auto items-center font-title">
                 {
                     proyecto.multimedia.map((plantilla, index) => {
                         let PlantillaAUsar = plantillasTipos[`${plantilla.tipo}${plantilla.resena ? 'R' : ''}` as PropiedadesPlantillas]
@@ -185,17 +185,17 @@ function Plantilla1R(props: { plantilla: PlantillaMultimedia }) {
         if (props.plantilla.tipo !== 1 || !props.plantilla.resena) throw 'numero de imágenes no esperadas || reseña vacía'
         const img = props.plantilla.imagenes[0]
         return (
-            <div className="flex w-4/5 self-center justify-center items-center space-x-8 ">
-                <div className="flex w-2/3">
+            <div className="grid grid-cols-2 w-4/5 gap-8">
                     <Image className="object-center"
                         src={img.url}
                         width={img.dimensions.width}
                         height={img.dimensions.height}
                     />
-                </div>
-                <p className="w-1/3 px-8 text-justify">
-                    {props.plantilla.resena}</p>
-            </div>
+                
+                 <p className="text-justify self-center">
+                     {props.plantilla.resena}</p>
+             
+            </div>   
         )
     } catch (e) {
         console.error(e)
@@ -207,7 +207,7 @@ function Plantilla2(props: { plantilla: PlantillaMultimedia }) {
     try {
         if (props.plantilla.tipo !== 2) throw 'numero de imágenes no esperadas'
         return (
-            <div className="flex w-4/5 self-center justify-center items-center space-x-8">
+            <div className="grid grid-cols-2 w-4/5 gap-8">
                 {props.plantilla.imagenes.map((img) => {
                     return (
                         <div className="flex w-1/2 h-pl2 ">
@@ -220,6 +220,7 @@ function Plantilla2(props: { plantilla: PlantillaMultimedia }) {
                     )
                 })}
             </div>
+
         )
     } catch (e) {
         console.error(e)
@@ -232,29 +233,50 @@ function Plantilla2R(props: { plantilla: PlantillaMultimedia }) {
     try {
         if (props.plantilla.tipo !== 2 || !props.plantilla.resena) throw 'numero de imágenes no esperadas || reseña vacía'
         return (
-            <div className="flex w-4/5 flex-col self-center justify-center items-center space-y-2">
-                <div className="flex w-auto justify-center items-center space-x-8">
-                    <p className="w-1/2 px-8 text-justify">
-                        {props.plantilla.resena}</p>
 
-                    <div className="flex w-1/2 justify-center items-center h-pl2R">
-                        <Image className="object-scale-down"
+            <div className="grid grid-cols-2 w-4/5 gap-8">
+                <p className="text-justify">
+                         {props.plantilla.resena}</p>
+                
+                         <Image className="object-scale-down"
                             src={props.plantilla.imagenes[0].url}
                             width={props.plantilla.imagenes[0].dimensions.width}
                             height={props.plantilla.imagenes[0].dimensions.height}
                         />
-                    </div>
-                </div>
-
-                <div className="flex w-full h-pl1R">
-                    <Image className="object-cover object-center"
+                
+                <div className="col-span-2">
+                <Image className="object-cover object-scale-down"
                         src={props.plantilla.imagenes[1].url}
                         width={props.plantilla.imagenes[1].dimensions.width}
                         height={props.plantilla.imagenes[1].dimensions.height}
                     />
                 </div>
-
+                     
+                
             </div>
+            // <div className="flex w-4/5 flex-col self-center justify-center items-center space-y-2">
+            //     <div className="flex w-auto justify-center items-center space-x-8">
+            //         <p className="w-1/2 px-8 text-justify">
+            //             {props.plantilla.resena}</p>
+
+            //         <div className="flex w-1/2 justify-center items-center h-pl2R">
+            //             <Image className="object-scale-down"
+            //                 src={props.plantilla.imagenes[0].url}
+            //                 width={props.plantilla.imagenes[0].dimensions.width}
+            //                 height={props.plantilla.imagenes[0].dimensions.height}
+            //             />
+            //         </div>
+            //     </div>
+
+            //     <div className="flex w-full h-pl1R">
+            //         <Image className="object-cover object-center"
+            //             src={props.plantilla.imagenes[1].url}
+            //             width={props.plantilla.imagenes[1].dimensions.width}
+            //             height={props.plantilla.imagenes[1].dimensions.height}
+            //         />
+            //     </div>
+
+            // </div>
         )
     } catch (e) {
         console.error(e)
