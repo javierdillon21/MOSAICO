@@ -22,7 +22,6 @@ interface Encabezado{
     ano: string
     portada: Imagen
     descripcion: string
-    carrusel: boolean
 
 }
 
@@ -33,6 +32,13 @@ interface Miniatura{
     ubicacion: string
 }
 
+interface Slide{
+    nombre: string
+    portada: Imagen
+    categoria: string
+    descripcion: string
+    idProyecto: string
+}
 //Utilities of MOSAICO-DOCUMENTS
 type ResultsPrismic = PrismicDocument[]
 type PropiedadesPlantillas = '1' | '1R' | '2' | '2R' | '3' | '3R' | '4' | '4R'
@@ -76,6 +82,9 @@ interface BodyPrimary {
     portada: Imagen
     descripcion: Texto[]
     resena: Texto[]
-    carrusel: boolean
+    link: {
+        id: string
+    }
 }
 
+type Carrusel= Slide[]

@@ -43,7 +43,11 @@ module.exports = {
         'secondary': '#C5802A',
         'third': '#4C4945',
         'danger': '#e3342f',
-      }
+      },
+      inset: {
+       '1/5': '20%',
+       '1/4': '25%',
+      },
     }
   },
   variants: {
