@@ -55,21 +55,22 @@ export default function Inicio() {
         width={carrusel[posicion].portada.dimensions.width}
         height={carrusel[posicion].portada.dimensions.height}
       />
-
-      <div className="absolute flex flex-col w-1/5 inset-y-1/4 ml-16 font-title">
+        <div className="absolute opacity-50 flex w-1/5 inset-y-1/4 ml-16 rounded-xl bg-white transform hover:rotate-45 shadow-2xl "></div>
+      <div className="absolute flex flex-col w-1/5 inset-y-1/4 ml-16 p-8 justify-center rounded-xl text-black font-title ">
         
       <Link href={`/${carrusel[posicion].idProyecto}`}>
         <a>
-          <p className="text-7xl w-2/3 font-bold transition all duration-500 ease-in-out hover:text-secondary"> 
+          <p className="flex text-6xl w-2/3 font-bold transition all duration-500 ease-in-out hover:text-secondary"> 
             {carrusel[posicion].nombre}</p>
         </a>
         </Link>
        
-        <p className="text-xl ">
+        <p className="text-lg font-bold text-third">
           {carrusel[posicion].categoria}</p>
-        <p className="text-lg mt-8 text-justify">
+        <p className="text-xl mt-8 text-justify">
           {carrusel[posicion].descripcion}</p>
       </div>
+      
       
     </div>
   );

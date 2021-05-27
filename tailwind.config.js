@@ -8,6 +8,11 @@ module.exports = {
         'secondary': '#ffed4a',
         'danger': '#e3342f',
       }),
+      brightness: {
+        10: '.1',
+        25: '.25',
+        175: '1.75',
+      },
       fontFamily: {
         'title': ['Sen', 'sans-serif']
       },
@@ -56,6 +61,7 @@ module.exports = {
       fill: ['hover', 'focus'],
       strokeWidth: ['hover', 'focus'],
       stroke: ['hover', 'focus'],
+      rotate: ['active', 'group-hover'],
     }
   }
 };

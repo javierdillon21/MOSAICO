@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="bg-white"  >
-      <div id="NavegationBar" className=" flex px-16 h-navegationbar w-auto content-center justify-between items-center text-xl text-third font-title">
+      <div id="NavegationBar" className="flex px-16 h-navegationbar w-auto content-center justify-between items-center text-xl text-third font-title">
 
         <div className="flex w-52 items-center">
           <Image className="object-scale-down"
