@@ -7,16 +7,16 @@ export default function Header() {
 
   return (
     <header className="flex absolute text-third h-20 max-h-20 w-screen ">
-      <div id="navegacion" className="flex invisible px-4 gap-16 bg-white items-center md:visible  ">
+      <div id="navegacion" className="flex invisible px-8 gap-16 w-screen bg-white items-center justify-between text-xl text-third font-title md:visible md:h-navegationbar">
         
-        <div className="flex max-h-20 w-32">
+        <div className="absolute flex max-h-20 w-32 md:static md:max-w-1/3 md:w-52">
               <Image className="object-scale-down object-center"
                 src="/LOGO MOSAICO HORIZONTAL.png"
                 width={5231}
                 height={1512}
               />
         </div>
-        <div id="PrimaryTabs" className="grid grid-cols-4 w-auto place-content-center justify-items-center items-center text-center gap-10 ">
+        <div id="PrimaryTabs" className="grid grid-cols-4 gap-14 w-auto place-content-center justify-items-center items-center text-center ">
            <Link href="/">
              <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
                Inicio
@@ -38,7 +38,7 @@ export default function Header() {
                  </a>
            </Link>
          </div>
-         <div id="SecondaryTabs" className="flex items-center text-center">
+         <div id="SecondaryTabs" className="flex items-center">
            <Link href="/">
              <a className="transition-all duration-500 ease-in-out hover:text-secondary">
                Nuestros Servicios
