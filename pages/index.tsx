@@ -47,32 +47,56 @@ export default function Inicio() {
 
     if(!carrusel) return <></>
   return (
+        <div className="relative flex w-screen h-screen">
+            <Image className="absolute filter brightness-45 filter contrast-125 object-cover"
+              src={carrusel[posicion].portada.url}
+              width={carrusel[posicion].portada.dimensions.width}
+              height={carrusel[posicion].portada.dimensions.height}
+            />
 
-    <div className="relative flex h-portada w-auto ">
+            <div className="absolute inset-y-1/4 flex flex-col items-center justify-center gap-8 font-title text-white">
+              <div className="flex flex-col max-w-1/2 items-center text-center">
+              <Link href={`/${carrusel[posicion].idProyecto}`}>
+            <a>
+              <p className="flex text-6xl font-bold "> 
+                {carrusel[posicion].nombre}</p>
+            </a>
+              </Link>
+              <p className="text-primary">
+                  {carrusel[posicion].categoria}</p>
+              </div>
+              <p className="max-w-3/4 text-center text-lg">
+                {carrusel[posicion].descripcion}</p>
+         </div>
+         
+         
+            
+        </div>
+    // <div className="relative flex w-full h-sm lg:h-portada lg:w-auto ">
 
-      <Image className="object-cover object-center"
-        src={carrusel[posicion].portada.url}
-        width={carrusel[posicion].portada.dimensions.width}
-        height={carrusel[posicion].portada.dimensions.height}
-      />
-        <div className="absolute opacity-50 flex w-1/5 inset-y-1/4 ml-16 rounded-xl bg-white transform hover:rotate-45 shadow-2xl "></div>
-      <div className="absolute flex flex-col w-1/5 inset-y-1/4 ml-16 p-8 justify-center rounded-xl text-black font-title ">
+    //   <Image className="object-cover object-center"
+    //     src={carrusel[posicion].portada.url}
+    //     width={carrusel[posicion].portada.dimensions.width}
+    //     height={carrusel[posicion].portada.dimensions.height}
+    //   />
+    //     <div className="absolute flex bottom-1 w-4/5 sm:w-auto lg:w-1/5 lg:inset-y-1/4 lg:ml-16 rounded-xl bg-white opacity-50 shadow-2xl"></div>
+    //   <div className="absolute flex flex-col lg:w-1/5 lg:inset-y-1/4 lg:ml-16 lg:p-8 justify-center rounded-xl text-black font-title ">
         
-      <Link href={`/${carrusel[posicion].idProyecto}`}>
-        <a>
-          <p className="flex text-6xl w-2/3 font-bold transition all duration-500 ease-in-out hover:text-secondary"> 
-            {carrusel[posicion].nombre}</p>
-        </a>
-        </Link>
+    //   <Link href={`/${carrusel[posicion].idProyecto}`}>
+    //     <a>
+    //       <p className="flex text-xl lg:text-6xl w-2/3 font-bold sm:text-4xl transition all duration-500 ease-in-out hover:text-secondary"> 
+    //         {carrusel[posicion].nombre}</p>
+    //     </a>
+    //     </Link>
        
-        <p className="text-lg font-bold text-third">
-          {carrusel[posicion].categoria}</p>
-        <p className="text-xl mt-8 text-justify">
-          {carrusel[posicion].descripcion}</p>
-      </div>
+    //     <p className="lg:text-lg font-bold text-third">
+    //       {carrusel[posicion].categoria}</p>
+    //     <p className="lg:text-xl lg:mt-8 text-justify">
+    //       {carrusel[posicion].descripcion}</p>
+    //   </div>
       
       
-    </div>
+    // </div>
   );
 }
 

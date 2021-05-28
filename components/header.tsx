@@ -6,52 +6,96 @@ export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   return (
-    <header className="bg-white"  >
-      <div id="NavegationBar" className="flex px-16 h-navegationbar w-auto content-center justify-between items-center text-xl text-third font-title">
-
-        <div className="flex w-52 items-center">
-          <Image className="object-scale-down"
-            src="/LOGO MOSAICO HORIZONTAL.png"
-            width={5231}
-            height={1512}
-          />
+    <header className="flex absolute text-third h-20 max-h-20 w-screen ">
+      <div id="navegacion" className="flex invisible px-4 gap-16 bg-white items-center md:visible  ">
+        
+        <div className="flex max-h-20 w-32">
+              <Image className="object-scale-down object-center"
+                src="/LOGO MOSAICO HORIZONTAL.png"
+                width={5231}
+                height={1512}
+              />
         </div>
+        <div id="PrimaryTabs" className="grid grid-cols-4 w-auto place-content-center justify-items-center items-center text-center gap-10 ">
+           <Link href="/">
+             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
+               Inicio
+                 </a>
+           </Link>
+           <Link href="/proyectos">
+             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
+               Proyectos
+                 </a>
+           </Link>
+           <Link href="/sobre_nosotros">
+             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
+               Sobre Nosotros
+                 </a>
+           </Link>
+           <Link href="/">
+             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
+               Contacto
+                 </a>
+           </Link>
+         </div>
+         <div id="SecondaryTabs" className="flex items-center text-center">
+           <Link href="/">
+             <a className="transition-all duration-500 ease-in-out hover:text-secondary">
+               Nuestros Servicios
+               </a>
+           </Link>
+         </div>
 
-
-        <div id="PrimaryTabs" className="container w-auto  justify-around space-x-12">
-          <Link href="/">
-            <a className="transition all duration-500 ease-in-out hover:text-secondary px-3">
-              Inicio
-                </a>
-          </Link>
-          <Link href="/proyectos">
-            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
-              Proyectos
-                </a>
-          </Link>
-          <Link href="/">
-            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
-              Sobre Nosotros
-                </a>
-          </Link>
-          <Link href="/">
-            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
-              Contacto
-                </a>
-          </Link>
-        </div>
-
-        <div id="SecondaryTabs" className="container w-auto justify-around">
-          <Link href="/">
-            <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
-              Nuestros Servicios
-              </a>
-          </Link>
-        </div>
-
-
+          
       </div>
-    </header >
+
+    </header>
+    // <header className="bg-white"  >
+    //   <div id="NavegationBar" className="flex invisible md:visible md:gap-16  h-navegationbar w-auto content-center justify-between items-center text-xl text-third font-title">
+
+    //     <div className="flex max-w-1/3 md:w-52">
+    //       <Image className="object-scale-down"
+    //         src="/LOGO MOSAICO HORIZONTAL.png"
+    //         width={5231}
+    //         height={1512}
+    //       />
+    //     </div>
+
+
+    //     <div id="PrimaryTabs" className="grid grid-cols-4 w-auto justify-items-center gap-10 ">
+    //       <Link href="/">
+    //         <a className="transition all duration-500 ease-in-out hover:text-secondary px-3">
+    //           Inicio
+    //             </a>
+    //       </Link>
+    //       <Link href="/proyectos">
+    //         <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+    //           Proyectos
+    //             </a>
+    //       </Link>
+    //       <Link href="/sobre_nosotros">
+    //         <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+    //           Sobre Nosotros
+    //             </a>
+    //       </Link>
+    //       <Link href="/">
+    //         <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+    //           Contacto
+    //             </a>
+    //       </Link>
+    //     </div>
+
+    //     <div id="SecondaryTabs" className="container w-auto justify-around">
+    //       <Link href="/">
+    //         <a className="transition-all duration-500 ease-in-out hover:text-secondary px-3">
+    //           Nuestros Servicios
+    //           </a>
+    //       </Link>
+    //     </div>
+
+
+    //   </div>
+    // </header >
   );
 }
 

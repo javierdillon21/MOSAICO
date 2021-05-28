@@ -11,11 +11,19 @@ module.exports = {
       brightness: {
         10: '.1',
         25: '.25',
+        45: '.45',
         175: '1.75',
       },
       fontFamily: {
         'title': ['Sen', 'sans-serif']
       },
+      maxWidth: {
+        '1/5': '20%',
+        '1/3': '33%',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+       },
       height: {
         navegationbar: '96px',
         socialmediabox: '27px',
@@ -26,7 +34,8 @@ module.exports = {
         pl2: '950px',
         pl2R: '550px',
         pl3: '457px',
-        miniatura: '200px'
+        miniatura: '200px',
+        sm: '660px'
       },
       width: {
         'tabsbox': '600px',
