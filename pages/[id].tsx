@@ -82,18 +82,20 @@ export default function GetProyecto() {
   if (!proyecto) return <p> </p>; // elemento de carga.
 
   return (
-    <div className="flex flex-col w-screen font-title md:mt-20">
+    <div className="flex flex-col w-screen font-title mt-24 md:mt-8 lg:mt-24">
       <div
         id="Encabezado"
-        className="flex flex-col mt-24 md:my-8 mx-4 md:ml-48 mb-4 gap-7 font-title leading-5"
+        className="flex flex-col lg:my-8 mx-4 lg:ml-48 mb-4 gap-7 font-title leading-5"
       >
         <div id="Title" className="font-bold">
-          <h1 className="text-6xl">{proyecto?.encabezado?.nombre}</h1>
+          <h1 className="text-5xl md:text-6xl">
+            {proyecto?.encabezado?.nombre}
+          </h1>
         </div>
         <div>
           <div
             id="Details"
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-x-9"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:w-2/3 lg:gap-x-9"
           >
             <div>
               <h4 className="font-bold text-base">Año</h4>
@@ -127,10 +129,10 @@ export default function GetProyecto() {
         id="Descripcion"
         className="flex flex-col w-auto my-8 justify-center items-center"
       >
-        <h1 className="w-90p md:w-7/12 justify-start text-xl sm:text-2xl font-bold pb-4">
+        <h1 className="w-90p md:w-4/5 lg:w-7/12 justify-start text-xl sm:text-2xl font-bold pb-4">
           Sobre el proyecto
         </h1>
-        <p className="w-90p md:w-7/12 text-justify text-third">
+        <p className="w-90p md:w-4/5 lg:w-7/12 text-justify text-third">
           {proyecto.encabezado.descripcion}
         </p>
       </div>
@@ -175,7 +177,7 @@ function Plantilla1(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 1) throw "numero de imágenes no esperadas";
     const img = props.plantilla.imagenes[0];
     return (
-      <div className="grid w-90p md:w-4/5 md:h-pl1 self-center">
+      <div className="grid w-90p lg:w-4/5 lg:h-pl1 self-center">
         <Image
           className="object-cover object-center"
           src={img.url}
@@ -196,9 +198,9 @@ function Plantilla1R(props: { plantilla: PlantillaMultimedia }) {
       throw "numero de imágenes no esperadas || reseña vacía";
     const img = props.plantilla.imagenes[0];
     return (
-      <div className="grid grid-cols-1 w-90p md:grid-cols-2 md:w-4/5 gap-4 md:gap-8 ">
+      <div className="grid grid-cols-1 w-90p md:grid-cols-2 lg:w-4/5 gap-4 md:gap-8 ">
         <Image
-          className="object-center"
+          className="object-cover object-center"
           src={img.url}
           width={img.dimensions.width}
           height={img.dimensions.height}
@@ -217,7 +219,7 @@ function Plantilla2(props: { plantilla: PlantillaMultimedia }) {
   try {
     if (props.plantilla.tipo !== 2) throw "numero de imágenes no esperadas";
     return (
-      <div className="grid grid-cols-1 w-90p md:grid-cols-2 md:w-4/5 gap-4 md:gap-8">
+      <div className="grid grid-cols-1 w-90p md:grid-cols-2 lg:w-4/5 gap-4 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
             <div className="flex h-96 md:h-auto">
@@ -243,7 +245,7 @@ function Plantilla2R(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 2 || !props.plantilla.resena)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-1 w-90p md:grid-cols-2 md:w-4/5 gap-4 md:gap-8">
+      <div className="grid grid-cols-1 w-90p md:grid-cols-2 lg:w-4/5 gap-4 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
             <div className="flex h-44 md:h-auto">
@@ -256,7 +258,7 @@ function Plantilla2R(props: { plantilla: PlantillaMultimedia }) {
             </div>
           );
         })}
-        <p className="md:col-span-2 md:w-5/6 justify-self-center text-justify">
+        <p className="md:col-span-2 lg:w-5/6 justify-self-center text-justify">
           {props.plantilla.resena}
         </p>
       </div>
@@ -271,10 +273,10 @@ function Plantilla3(props: { plantilla: PlantillaMultimedia }) {
   try {
     if (props.plantilla.tipo !== 3) throw "numero de imágenes no esperadas";
     return (
-      <div className="grid grid-cols-5 grid-rows-4 grid-flow-col w-4/5 gap-8">
+      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-5 md:grid-rows-4 md:grid-flow-col w-90p lg:w-4/5 md:gap-8 gap-4">
         {props.plantilla.imagenes.slice(0, 2).map((img) => {
           return (
-            <div className="flex col-span-2 row-span-2">
+            <div className="flex md:col-span-2 md:row-span-2">
               <Image
                 className="object-cover object-center"
                 src={img.url}
@@ -284,7 +286,7 @@ function Plantilla3(props: { plantilla: PlantillaMultimedia }) {
             </div>
           );
         })}
-        <div className="flex col-span-3 row-span-4">
+        <div className="flex col-span-2 md:col-span-3 md:row-span-4">
           <Image
             className="object-cover"
             src={props.plantilla.imagenes[2].url}
@@ -305,29 +307,35 @@ function Plantilla3R(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 3 || !props.plantilla.resena)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-3 grid-rows-3 grid-flow-col w-4/5 gap-8">
-        {props.plantilla.imagenes.slice(0, 2).map((img) => {
-          return (
-            <div className="flex">
-              <Image
-                className="object-cover object-center"
-                src={img.url}
-                width={img.dimensions.width}
-                height={img.dimensions.height}
-              />
-            </div>
-          );
-        })}
-
-        <div className="flex col-span-2 row-span-3">
-          <Image
-            className="object-cover"
-            src={props.plantilla.imagenes[2].url}
-            width={props.plantilla.imagenes[2].dimensions.width}
-            height={props.plantilla.imagenes[2].dimensions.height}
-          />
+      <div className="flex flex-col w-full gap-8 items-center">
+        <div className="w-90p md:order-first md:col-span-3 lg:w-4/6 ">
+          <p className="justify-self-center self-end text-justify">
+            {props.plantilla.resena}
+          </p>
         </div>
-        <p className="order-first text-justify">{props.plantilla.resena}</p>
+        <div className="grid grid-rows-3 w-90p md:grid-cols-3 md:grid-rows-2 md:grid-flow-col lg:w-4/5 gap-4 md:gap-8">
+          {props.plantilla.imagenes.slice(0, 2).map((img) => {
+            return (
+              <div className="flex">
+                <Image
+                  className="object-cover object-center"
+                  src={img.url}
+                  width={img.dimensions.width}
+                  height={img.dimensions.height}
+                />
+              </div>
+            );
+          })}
+
+          <div className="flex md:col-span-2 md:row-span-2">
+            <Image
+              className="object-cover"
+              src={props.plantilla.imagenes[2].url}
+              width={props.plantilla.imagenes[2].dimensions.width}
+              height={props.plantilla.imagenes[2].dimensions.height}
+            />
+          </div>
+        </div>
       </div>
     );
   } catch (e) {
@@ -340,10 +348,10 @@ function Plantilla4(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 4)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 md:w-4/5 md:gap-8">
+      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
-            <div className="flex h-44 md:h-pl1R">
+            <div className="flex h-44 md:h-96 lg:h-pl1R">
               <Image
                 className="object-cover object-center"
                 src={img.url}
@@ -366,10 +374,10 @@ function Plantilla4R(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 4 || !props.plantilla.resena)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 md:w-4/5 md:gap-8">
+      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
-            <div className="flex h-44 md:h-pl1R">
+            <div className="flex h-44 md:h-96 lg:h-pl1R">
               <Image
                 className="object-cover object-center"
                 src={img.url}
@@ -379,7 +387,7 @@ function Plantilla4R(props: { plantilla: PlantillaMultimedia }) {
             </div>
           );
         })}
-        <p className="md:col-span-4 md:w-5/6 justify-self-center text-justify">
+        <p className="md:col-span-4 lg:w-5/6 justify-self-center text-justify">
           {props.plantilla.resena}
         </p>
       </div>

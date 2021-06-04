@@ -36,6 +36,7 @@ module.exports = {
         "60p": "60%",
         "80p": "80%",
         "90p": "90%",
+        navegationbar: "96px",
       },
       height: {
         navegationbar: "96px",
