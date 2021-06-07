@@ -88,7 +88,7 @@ export default function GetProyecto() {
         className="flex flex-col lg:my-8 mx-4 lg:ml-48 mb-4 gap-7 font-title leading-5"
       >
         <div id="Title" className="font-bold">
-          <h1 className="text-5xl md:text-6xl">
+          <h1 className="text-center lg:text-left text-5xl md:text-6xl">
             {proyecto?.encabezado?.nombre}
           </h1>
         </div>
@@ -222,7 +222,7 @@ function Plantilla2(props: { plantilla: PlantillaMultimedia }) {
       <div className="grid grid-cols-1 w-90p md:grid-cols-2 lg:w-4/5 gap-4 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
-            <div className="flex h-96 md:h-auto">
+            <div className="flex h-80 md:h-auto">
               <Image
                 className="object-cover"
                 src={img.url}
@@ -348,7 +348,7 @@ function Plantilla4(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 4)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
+      <div className="grid grid-cols-2 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
             <div className="flex h-44 md:h-96 lg:h-pl1R">
@@ -374,7 +374,7 @@ function Plantilla4R(props: { plantilla: PlantillaMultimedia }) {
     if (props.plantilla.tipo !== 4 || !props.plantilla.resena)
       throw "numero de imágenes no esperadas || reseña vacía";
     return (
-      <div className="grid grid-cols-1 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
+      <div className="grid grid-cols-2 w-90p gap-4 md:grid-cols-4 lg:w-4/5 md:gap-8">
         {props.plantilla.imagenes.map((img) => {
           return (
             <div className="flex h-44 md:h-96 lg:h-pl1R">
@@ -387,7 +387,7 @@ function Plantilla4R(props: { plantilla: PlantillaMultimedia }) {
             </div>
           );
         })}
-        <p className="md:col-span-4 lg:w-5/6 justify-self-center text-justify">
+        <p className="col-span-2 md:col-span-4 lg:w-5/6 justify-self-center text-justify">
           {props.plantilla.resena}
         </p>
       </div>

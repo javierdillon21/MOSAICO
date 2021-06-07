@@ -1,6 +1,13 @@
 module.exports = {
   purge: ["./components/**/*.js", "./pages/**/*.js"],
   theme: {
+    borderColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#A8A198",
+      secondary: "#C5802A",
+      third: "#2B2B2B",
+      danger: "#e3342f",
+    }),
     extend: {
       gradientColorStops: (theme) => ({
         ...theme("colors"),
@@ -51,6 +58,9 @@ module.exports = {
         miniatura: "200px",
         sm: "660px",
         "60p": "60%",
+        "10p": "10%",
+        "15p": "15%",
+        "20p": "20%",
       },
       width: {
         tabsbox: "600px",
@@ -59,6 +69,9 @@ module.exports = {
         "90p": "90%",
         "95p": "95%",
         "98p": "98%",
+        "10p": "10%",
+        "15p": "15%",
+        "20p": "20%",
       },
       fontSize: {
         header: ["15px", "18px"],

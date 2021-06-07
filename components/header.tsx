@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Menu } from "@headlessui/react";
 
 export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   return (
-    <header className="flex absolute px-8 md:static xl:absolute z-10 lg:bg-white text-third font-title  md:text-lg lg:text-xl justify-center md:justify-between h-navegationbar max-h-navegationbar w-screen ">
+    <header className="flex absolute px-8 md:static xl:absolute z-10 lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen">
       <div className="flex w-28 md:static md:w-32">
         <Image
           className="object-scale-down object-center"
@@ -51,6 +53,57 @@ export default function Header() {
             Nuestros Servicios
           </a>
         </Link>
+      </div>
+
+      <div className="flex absolute h-full w-15p right-0 items-center justify-center text-lg text-black">
+        <Menu
+          as="div"
+          className="relative flex flex-col h-full w-full items-center justify-center"
+        >
+          <Menu.Button>
+            <FontAwesomeIcon
+              icon="bars"
+              className="fill-current text-black"
+              size="lg"
+            />
+          </Menu.Button>
+          <Menu.Items
+            as="div"
+            className="absolute flex flex-col top-3/4 right-0 h-auto w-56 p-4 gap-4 bg-white border-third border border-opacity-75"
+          >
+            <Menu.Item>
+              {({ active }) => (
+                <a className={`${active && "bg-blue-500"}`} href="/proyectos">
+                  Proyectos
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  className={`${active && "bg-blue-500"}`}
+                  href="/sobre_nosotros"
+                >
+                  Sobre nosotros
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a className={`${active && "bg-blue-500"}`} href="/">
+                  Contacto
+                </a>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <a className={`${active && "bg-blue-500"}`} href="/">
+                  Nuestros Servicios
+                </a>
+              )}
+            </Menu.Item>
+          </Menu.Items>
+        </Menu>
       </div>
     </header>
   );

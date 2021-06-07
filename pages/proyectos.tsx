@@ -49,7 +49,7 @@ export default function MostrarProyectos() {
                     />
                   </a>
                 </Link>
-                <div>
+                <div className="">
                   <p className="text-secondary text-lg transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
                     {p.nombre}
                   </p>
