@@ -25,15 +25,17 @@ export default function MostrarProyectos() {
             portada: imgPortada,
             categoria: document.data.body[0].primary.categoria,
             ubicacion: document.data.body[0].primary.ubicacion[0].text,
+            ambiente: document.data.body[0].primary.ambiente,
           };
           return miniatura;
         });
+        console.log(miniaturas);
         setMiniaturas(arr);
       });
   }, []);
 
   return (
-    <div className="flex w-screen justify-center mt-24 mb-8 md:mt-4 xl:mt-24">
+    <div className="flex w-screen justify-center mt-24 mb-8 md:mt-4 xl:mt-24 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-5/6 gap-x-2 gap-y-6">
         {miniaturas?.map((p) => {
           return (
@@ -49,12 +51,12 @@ export default function MostrarProyectos() {
                     />
                   </a>
                 </Link>
-                <div className="">
+                <div>
                   <p className="text-secondary text-lg transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
                     {p.nombre}
                   </p>
                   <p>{p.categoria}</p>
-                  <p>{p.ubicacion}</p>
+                  <p>{p.ambiente}</p>
                 </div>
               </div>
             </div>

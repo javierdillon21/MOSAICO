@@ -9,14 +9,16 @@ export default function Header() {
 
   return (
     <header className="flex absolute px-8 md:static xl:absolute z-10 lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen">
-      <div className="flex w-28 md:static md:w-32">
-        <Image
-          className="object-scale-down object-center"
-          src="/LOGO MOSAICO ALT APP BLACK.png"
-          width={5231}
-          height={1512}
-        />
-      </div>
+      <Link href="/">
+        <a className="flex w-28 md:static md:w-32">
+          <Image
+            className="object-scale-down object-center"
+            src="/LOGO MOSAICO ALT APP BLACK.png"
+            width={5231}
+            height={1512}
+          />
+        </a>
+      </Link>
       <div
         id="navegacion"
         className="hidden w-screen bg-white items-center justify-center md:flex md:h-navegationbar"
@@ -55,7 +57,7 @@ export default function Header() {
         </Link>
       </div>
 
-      <div className="flex absolute h-full w-15p right-0 items-center justify-center text-lg text-black">
+      <div className="flex absolute h-full w-15p right-0 items-center justify-center text-lg text-black md:hidden">
         <Menu
           as="div"
           className="relative flex flex-col h-full w-full items-center justify-center"

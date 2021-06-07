@@ -30,6 +30,7 @@ interface Miniatura{
     portada: Imagen
     categoria: string
     ubicacion: string
+    ambiente: string
 }
 
 interface Slide{
@@ -79,6 +80,7 @@ interface BodyPrimary {
     categoria: string
     nombre: Texto[]
     ubicacion: Texto[]
+    ambiente: string
     portada: Imagen
     descripcion: Texto[]
     resena: Texto[]

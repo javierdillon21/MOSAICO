@@ -6,7 +6,6 @@ import { animateScroll as scroll } from "react-scroll";
 import Prismic from "@prismicio/client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 
 export default function Inicio() {
   var [carrusel, setCarrusel] = useState<Carrusel>();
@@ -56,16 +55,16 @@ export default function Inicio() {
           width={carrusel[posicion].portada.dimensions.width}
           height={carrusel[posicion].portada.dimensions.height}
         />
-        <span className="absolute flex w-full h-10p bottom-0 justify-center items-center">
+        <span className="absolute flex w-full h-10p bottom-0 justify-center items-center md:hidden">
           <FontAwesomeIcon
             icon="angle-double-down"
-            className="animate-pulse fill-current text-black"
+            className="animate-pulse fill-current text-gray-900"
             size="2x"
             onClick={() => scroll.scrollToBottom()}
           />
         </span>
       </div>
-      <div className="absolute flex flex-col inset-y-1/4 gap-8 py-4 md:w-1/2 md:inset-y-1/4 md:ml-16 md:p-8 md:shadow-2xl lg:w-2/5 xl:w-96 items-center justify-center md:rounded-xl bg-white bg-opacity-60 font-title text-black">
+      <div className="absolute flex flex-col inset-y-1/4 gap-8 py-4 md:w-1/2 md:inset-y-1/4 md:ml-16 md:p-8 md:shadow-2xl lg:w-2/5 xl:w-96 items-center justify-center md:rounded-xl bg-gray-100 bg-opacity-60 font-title text-black">
         <div className="flex flex-col max-w-1/2 lg:max-w-90p items-center">
           <Link href={`/${carrusel[posicion].idProyecto}`}>
             <a>
@@ -84,7 +83,7 @@ export default function Inicio() {
       </div>
       <div
         id="tabs"
-        className="flex flex-col w-screen h-screen text-center items-center font-title bg-white md:hidden"
+        className="flex flex-col w-screen h-screen text-center justify-between items-center font-title bg-gray-100 md:hidden"
       >
         <div className="flex flex-col w-full h-1/2 mt-20 text-3xl">
           <Link href="/proyectos">
@@ -108,17 +107,20 @@ export default function Inicio() {
             </a>
           </Link>
         </div>
-        <div className="flex w-full h-1/2">
-          <FontAwesomeIcon
-            icon={["fab", "facebook-f"]}
-            className="fill-current text-gray-900"
-            size="2x"
-          />
-          <FontAwesomeIcon
-            icon={["fab", "instagram"]}
-            className="fill-current text-gray-900"
-            size="2x"
-          />
+        <div className="flex flex-col w-full h-1/5 items-center justify-end gap-2">
+          <span className="flex w-4/5 justify-center gap-14">
+            <FontAwesomeIcon
+              icon={["fab", "facebook-f"]}
+              className="fill-current text-gray-900"
+              size="2x"
+            />
+            <FontAwesomeIcon
+              icon={["fab", "instagram"]}
+              className="fill-current text-gray-900"
+              size="2x"
+            />
+          </span>
+          <p>Mosaico - Arquitectura y diseño</p>
         </div>
       </div>
     </div>
