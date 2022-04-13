@@ -47,23 +47,25 @@ export default function Inicio() {
 
   if (!carrusel) return <></>;
   return (
-    <div className="flex flex-col w-screen h-full md:absolute">
-      <div className="relative flex h-screen w-screen">
+    <>
+      <span className="flex h-full">
         <Image
-          className="object-cover"
+          className=""
           src={carrusel[posicion].portada.url}
           width={carrusel[posicion].portada.dimensions.width}
           height={carrusel[posicion].portada.dimensions.height}
         />
-        <span className="absolute flex w-full h-10p bottom-0 justify-center items-center md:hidden">
+      </span>
+      {/* Boton para scrollear a pANTALLA de pestañas completa */}
+      {/* <span className="absolute flex w-full h-10p bottom-0 justify-center items-center md:hidden">
           <FontAwesomeIcon
             icon="angle-double-down"
             className="animate-pulse fill-current text-gray-900"
             size="2x"
             onClick={() => scroll.scrollToBottom()}
           />
-        </span>
-      </div>
+        </span> */}
+
       <div className="absolute flex flex-col inset-y-1/4 gap-8 py-4 md:w-1/2 md:inset-y-1/4 md:ml-16 md:p-8 md:shadow-2xl lg:w-2/5 xl:w-96 items-center justify-center md:rounded-xl bg-gray-100 bg-opacity-60 font-title text-black">
         <div className="flex flex-col max-w-1/2 lg:max-w-90p items-center">
           <Link href={`/${carrusel[posicion].idProyecto}`}>
@@ -81,7 +83,9 @@ export default function Inicio() {
           {carrusel[posicion].descripcion}
         </p>
       </div>
-      <div
+
+      {/* PANTALLA DE Pestañas COMPLETA */}
+      {/* <div
         id="tabs"
         className="flex flex-col w-screen h-screen text-center justify-between items-center font-title bg-gray-100 md:hidden"
       >
@@ -122,8 +126,8 @@ export default function Inicio() {
           </span>
           <p>Mosaico - Arquitectura y diseño</p>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
 function FormatearTexto(arr: Array<Texto>) {

@@ -1,14 +1,27 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@headlessui/react";
+import { useRouter } from "next/router";
 
 export default function Header() {
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const [isHomePage, setIsHomePage] = useState(true);
+  const router = useRouter().asPath;
+  useEffect(() => {
+    if (router !== "/") {
+      setIsHomePage(false);
+    } else {
+      setIsHomePage(true);
+    }
+  }, [router]);
 
   return (
-    <header className="flex absolute px-8 md:static xl:absolute z-10 lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen">
+    <header
+      className={`flex ${
+        isHomePage ? "absolute z-10" : "sticky"
+      } px-8 md:sticky lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen`}
+    >
       <Link href="/">
         <a className="flex w-28 md:static md:w-32">
           <Image
