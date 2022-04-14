@@ -35,7 +35,7 @@ export default function MostrarProyectos() {
   }, []);
 
   return (
-    <div className="flex w-screen justify-center mt-24 mb-8 md:mt-4 xl:mt-24 ">
+    <div className="flex w-full justify-center mt-4 mb-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-5/6 gap-x-2 gap-y-6">
         {miniaturas?.map((p) => {
           return (

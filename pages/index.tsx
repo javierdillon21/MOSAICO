@@ -50,7 +50,7 @@ export default function Inicio() {
     <>
       <span className="flex h-full">
         <Image
-          className=""
+          className="object-cover"
           src={carrusel[posicion].portada.url}
           width={carrusel[posicion].portada.dimensions.width}
           height={carrusel[posicion].portada.dimensions.height}
