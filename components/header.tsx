@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header
       className={`flex ${
-        isHomePage ? "absolute z-10" : "sticky"
+        isHomePage ? "absolute z-10" : "sticky top-0 bg-white"
       } px-8 md:sticky lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen`}
     >
       <Link href="/">
@@ -27,8 +27,8 @@ export default function Header() {
           <Image
             className="object-scale-down object-center"
             src="/LOGO MOSAICO ALT APP BLACK.png"
-            width={5231}
-            height={1512}
+            width={1000}
+            height={1000}
           />
         </a>
       </Link>

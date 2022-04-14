@@ -20,7 +20,9 @@ export default function Layout(props: { children: React.ReactElement }) {
       } bg-white`}
     >
       <Header />
-      <main className="flex flex-1 justify-center ">{props.children}</main>
+      <main className="flex flex-1 mb-10 justify-center ">
+        {props.children}
+      </main>
     </div>
   );
 }
