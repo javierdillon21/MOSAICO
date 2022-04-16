@@ -1,5 +1,6 @@
 import { type } from "node:os";
-import 'tw-elements';
+
+
 // Proyecto: estructura de un proyecto mosaico
 interface Proyecto{
     encabezado: Encabezado

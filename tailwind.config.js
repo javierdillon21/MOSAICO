@@ -1,12 +1,10 @@
 module.exports = {
-  purge: [
-    "./components/**/*.js",
-    "./pages/**/*.js",
+  content: [
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
 
-  plugins: [require("tw-elements/dist/plugin")],
   theme: {
     borderColor: (theme) => ({
       ...theme("colors"),

@@ -27,6 +27,7 @@
     "@headlessui/react": "^1.2.0",
     "@prismicio/client": "^4.0.0",
     "@types/prismic-dom": "^2.1.1",
+    "flowbite": "^1.4.2",
     "next": "^10.0.4",
     "next-slicezone": "^0.0.15",
     "prismic-dom": "^2.2.4",
