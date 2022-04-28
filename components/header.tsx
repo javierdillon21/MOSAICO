@@ -17,16 +17,14 @@ export default function Header() {
   }, [router]);
 
   return (
-    <header
-      className={`flex ${
-        isHomePage ? "absolute z-10" : "sticky top-0 bg-white"
-      } px-8 md:sticky lg:bg-white text-third font-title md:text-lg lg:text-xl justify-left md:justify-between h-navegationbar max-h-navegationbar w-screen`}
+    <div
+      className={`flex sticky top-0 z-10 justify-between h-20 w-full px-6 items-center uppercase bg-white text-black font-raleway md:justify-between md:text-lg lg:text-sm `}
     >
       <Link href="/">
-        <a className="flex w-28 md:static md:w-32">
+        <a className="flex w-44 h-full md:w-60">
           <Image
-            className="object-scale-down object-center"
-            src="/LOGO MOSAICO ALT APP BLACK.png"
+            className="object-cover object-center"
+            src="/logos_mosaico/horizontales_sin_eslogan/original.png"
             width={1000}
             height={1000}
           />
@@ -34,11 +32,11 @@ export default function Header() {
       </Link>
       <div
         id="navegacion"
-        className="hidden w-screen bg-white items-center justify-center md:flex md:h-navegationbar"
+        className="hidden w-full items-center pr-12 justify-end md:flex md:h-navegationbar"
       >
         <div
           id="PrimaryTabs"
-          className="grid grid-cols-4 gap-14 w-auto place-content-center justify-items-center items-center text-center"
+          className="grid grid-cols-5 gap-14 w-auto place-content-center justify-items-center items-center text-center"
         >
           <Link href="/">
             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
@@ -60,26 +58,26 @@ export default function Header() {
               Contacto
             </a>
           </Link>
+          <Link href="/">
+            <a className="transition-all duration-500 ease-in-out hover:text-secondary text-center">
+              Nuestros Servicios
+            </a>
+          </Link>
         </div>
       </div>
-      <div id="SecondaryTabs" className="hidden md:flex items-center ">
-        <Link href="/">
-          <a className="transition-all duration-500 ease-in-out hover:text-secondary text-center">
-            Nuestros Servicios
-          </a>
-        </Link>
-      </div>
+      {/* <div id="SecondaryTabs" className="hidden md:flex items-center "></div> */}
 
-      <div className="flex absolute h-full w-15p right-0 items-center justify-center text-lg text-black md:hidden">
+      <div className="flex z-10 relative h-24 w-10 items-center justify-center text-lg text-black md:hidden">
+        {/* <p className="text-white text-xs">ESTUDIO ARQUITECTÓNICO</p> */}
         <Menu
           as="div"
-          className="relative flex flex-col h-full w-full items-center justify-center"
+          className="absolute flex flex-col h-full w-1/4 items-center justify-center"
         >
           <Menu.Button>
             <FontAwesomeIcon
               icon="bars"
-              className="fill-current text-black"
-              size="lg"
+              className="fill-current text-third"
+              size="1x"
             />
           </Menu.Button>
           <Menu.Items
@@ -120,6 +118,6 @@ export default function Header() {
           </Menu.Items>
         </Menu>
       </div>
-    </header>
+    </div>
   );
 }

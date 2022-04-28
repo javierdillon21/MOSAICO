@@ -1,32 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Carrusel } from "../src/data";
 import Image from "next/image";
+import gsap from "gsap";
 
 export default function Carousel(props: { carousel: Carrusel }) {
   var [posicion, setPosicion] = useState(0);
-  useEffect(() => {}, []);
+  const divref = useRef(null);
 
   setTimeout(() => {
     setPosicion(posicion + 1 == props.carousel.length ? 0 : posicion + 1);
-  }, 5000);
+  }, 10000);
+
+  useEffect(() => {
+    gsap.fromTo(
+      divref.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1.5,
+      }
+    );
+  }, [posicion]);
+
+  useEffect(() => {}, [posicion]);
   return (
     <>
-      <span className="flex h-full">
+      <div className="relative flex h-full w-full bg-black" ref={divref}>
         <Image
-          className="object-cover"
+          objectFit="cover"
           src={props.carousel[posicion].portada.url}
-          width={props.carousel[posicion].portada.dimensions.width}
-          height={props.carousel[posicion].portada.dimensions.height}
+          width={4096}
+          height={2160}
         />
-      </span>
-      <button
+        {/* <span className="absolute flex h-full w-full bg-black opacity-50"></span> */}
+      </div>
+
+      {/* <button
         className="border-2 "
-        onClick={() =>
-          setPosicion(posicion + 1 == props.carousel.length ? 0 : posicion + 1)
-        }
+        onClick={() => {
+          clearTimeout(timeid);
+          NewT;
+        }}
       >
         SIGUIENTE
-      </button>
+      </button> */}
     </>
   );
 }

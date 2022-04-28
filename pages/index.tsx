@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import cliente from "../src/prismic/prismic-configuration";
 import { Carrusel, Imagen, ResultsPrismic, Slide, Texto } from "../src/data";
 import { animateScroll as scroll } from "react-scroll";
 import Prismic from "@prismicio/client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Carousel from "../components/carousel";
+import gsap from "gsap";
 
 export default function Inicio() {
   var [carrusel, setCarrusel] = useState<Carrusel>();
@@ -38,95 +40,127 @@ export default function Inicio() {
   }, []);
 
   if (carrusel != undefined) {
-    setTimeout(() => {
-      setPosicion(
-        posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
-      );
-    }, 5000);
   }
 
+  const titleref = useRef(null);
+  const descriptionref = useRef(null);
+  const linearref = useRef(null);
+  const divref = useRef(null);
+  useEffect(() => {
+    gsap.fromTo(
+      divref.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1.5,
+      }
+    );
+  }, [posicion]);
+
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     titleref.current,
+  //     { opacity: 0, ease: "power2.in", y: -25 },
+  //     {
+  //       duration: 1.8,
+  //       opacity: 1,
+  //       delay: 2,
+  //       y: 0,
+  //     }
+  //   );
+  //   gsap.fromTo(
+  //     descriptionref.current,
+  //     { opacity: 0, ease: "power2.in", y: 25 },
+  //     {
+  //       duration: 1.8,
+  //       opacity: 1,
+  //       delay: 2.5,
+  //       y: 0,
+  //     }
+  //   );
+  // }, [posicion, divref]);
+
   if (!carrusel) return <></>;
+  // var timerID = setTimeout(() => {
+  //   setPosicion(
+  //     posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
+  //   );
+  // }, 10000);
+  // console.log(timerID);
   return (
     <>
-      <span className="flex h-full">
+      {/* <Carousel carousel={carrusel}></Carousel> */}
+      <div className="relative flex h-full w-full bg-black" ref={divref}>
         <Image
-          className="object-cover"
+          objectFit="cover"
           src={carrusel[posicion].portada.url}
-          width={carrusel[posicion].portada.dimensions.width}
-          height={carrusel[posicion].portada.dimensions.height}
+          width={4096}
+          height={2160}
         />
-      </span>
-      {/* Boton para scrollear a pANTALLA de pestañas completa */}
-      {/* <span className="absolute flex w-full h-10p bottom-0 justify-center items-center md:hidden">
-          <FontAwesomeIcon
-            icon="angle-double-down"
-            className="animate-pulse fill-current text-gray-900"
-            size="2x"
-            onClick={() => scroll.scrollToBottom()}
-          />
-        </span> */}
-
-      <div className="absolute flex flex-col inset-y-1/4 gap-8 py-4 md:w-1/2 md:inset-y-1/4 md:ml-16 md:p-8 md:shadow-2xl lg:w-2/5 xl:w-96 items-center justify-center md:rounded-xl bg-gray-100 bg-opacity-60 font-title text-black">
-        <div className="flex flex-col max-w-1/2 lg:max-w-90p items-center">
-          <Link href={`/${carrusel[posicion].idProyecto}`}>
-            <a>
-              <p className="flex text-6xl font-bold text-center transition all duration-500 ease-in-out hover:text-secondary">
-                {carrusel[posicion].nombre}
-              </p>
-            </a>
-          </Link>
-          <p className="flex text-gray-700 text-center">
-            {carrusel[posicion].categoria}
-          </p>
-        </div>
-        <p className="max-w-80p text-justify overflow-scroll xl:overflow-hidden text-lg">
-          {carrusel[posicion].descripcion}
-        </p>
+        {/* <span className="absolute flex h-full w-full bg-black opacity-50"></span> */}
       </div>
 
-      {/* PANTALLA DE Pestañas COMPLETA */}
-      {/* <div
-        id="tabs"
-        className="flex flex-col w-screen h-screen text-center justify-between items-center font-title bg-gray-100 md:hidden"
-      >
-        <div className="flex flex-col w-full h-1/2 mt-20 text-3xl">
-          <Link href="/proyectos">
-            <a className="flex flex-1 w-screen justify-center items-center border-gray-400 border-b">
-              <p>Proyectos</p>
-            </a>
+      {/* DESCRIPCION FLOTANTE*/}
+      <div className="absolute flex flex-col inset-y-1/3 md:inset-y-1/4 gap-10 py-4 w-full h-96 md:h-auto sm:w-1/3 items-center justify-center bg-black bg-opacity-50 border-gray-300 text-gray-100">
+        <div
+          ref={titleref}
+          className="flex flex-col w-full items-center gap-y-4 "
+        >
+          <Link href={`/${carrusel[posicion].idProyecto}`}>
+            <p className="flex w-3/4 text-5xl md:text-7xl animate-fade-in-down font-black text-center justify-center md:justify-start font-poppins md:text-left">
+              {carrusel[posicion].nombre}
+            </p>
           </Link>
-          <Link href="/sobre_nosotros">
-            <a className="flex flex-1 w-screen justify-center items-center border-gray-400 border-b">
-              <p>Sobre Nosotros</p>
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="flex flex-1 w-screen justify-center items-center border-gray-400 border-b">
-              <p>Contacto</p>
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="flex flex-1 w-screen justify-center items-center">
-              <p>Nuestros Servicios</p>
-            </a>
-          </Link>
-        </div>
-        <div className="flex flex-col w-full h-1/5 items-center justify-end gap-2">
-          <span className="flex w-4/5 justify-center gap-14">
-            <FontAwesomeIcon
-              icon={["fab", "facebook-f"]}
-              className="fill-current text-gray-900"
-              size="2x"
-            />
-            <FontAwesomeIcon
-              icon={["fab", "instagram"]}
-              className="fill-current text-gray-900"
-              size="2x"
-            />
+          <span
+            ref={descriptionref}
+            className="flex w-3/4 text-sm font-normal text-gray-50 text-center md:text-left"
+          >
+            <p className="flex w-full">{carrusel[posicion].descripcion}</p>
           </span>
-          <p>Mosaico - Arquitectura y diseño</p>
+          {/* <p className="flex w-1/2 text-gray-100 text-left font-extrabold">
+            {carrusel[posicion].categoria}
+          </p> */}
         </div>
-      </div> */}
+        <div
+          ref={linearref}
+          className="flex border-b border-opacity-5 w-full"
+        ></div>
+        <button
+          className="flex absolute bottom-0 right-0 h-12 w-12 items-center justify-center"
+          onClick={(e) => {
+            e.preventDefault();
+            // clearTimeout(timerID);
+            setPosicion(
+              posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
+            );
+          }}
+        >
+          <FontAwesomeIcon
+            icon="arrow-right"
+            stroke="1"
+            size="lg"
+            color="white"
+          />
+        </button>
+        <button
+          className="flex absolute bottom-0 left-0 h-12 w-12 items-center justify-center"
+          disabled={false}
+          onClick={(e) => {
+            e.preventDefault();
+            // clearTimeout(timerID);
+
+            setPosicion(
+              posicion - 1 == -1
+                ? (carrusel as Carrusel).length - 1
+                : posicion - 1
+            );
+          }}
+        >
+          <FontAwesomeIcon icon="arrow-left" size="lg" color="white" />
+        </button>
+      </div>
     </>
   );
 }

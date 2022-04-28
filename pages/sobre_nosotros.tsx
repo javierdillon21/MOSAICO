@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Menu } from "@headlessui/react";
 import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <>
-      <div className="flex flex-col gap-y-8 w-11/12 items-center bg-white font-title">
+    <div className="flex h-full w-full justify-center py-8">
+      <div className="flex flex-col gap-y-8 w-11/12 items-center bg-white">
         <section className="flex flex-row px-2 items-center justify-center w-full md:h-96 lg:w-3/2 lg:gap-x-4 bg-gray-50">
           <span className="flex flex-col w-3/5 gap-y-4 ">
             <p className="font-bold text-3xl lg:text-4xl leading-none">
@@ -81,6 +80,6 @@ export default function AboutUs() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }

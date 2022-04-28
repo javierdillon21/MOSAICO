@@ -4,7 +4,7 @@ module.exports = {
     "./pages/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-
+  plugins: [require("@tailwindcss/line-clamp")],
   theme: {
     borderColor: (theme) => ({
       ...theme("colors"),
@@ -28,6 +28,8 @@ module.exports = {
       },
       fontFamily: {
         title: ["Sen", "sans-serif"],
+        raleway: ["Raleway"],
+        poppins: ["Poppins"],
       },
       maxWidth: {
         "1/5": "20%",
@@ -66,6 +68,9 @@ module.exports = {
         "10p": "10%",
         "15p": "15%",
         "20p": "20%",
+        "90p": "90%",
+        "92p": "92%",
+        "88p": "88%",
       },
       width: {
         tabsbox: "600px",
@@ -97,6 +102,31 @@ module.exports = {
       inset: {
         "1/5": "20%",
         "1/4": "25%",
+      },
+      keyframes: {
+        "fade-in-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "appear-progressive": {
+          "0%": {
+            opacity: "100",
+            borderColor: "#fff",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        "fade-in-down": "fade-in-down 0.5s ease-out",
       },
     },
   },

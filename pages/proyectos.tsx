@@ -36,11 +36,11 @@ export default function MostrarProyectos() {
 
   return (
     <div className="flex w-full justify-center mt-4 mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-5/6 gap-x-2 gap-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-5/6 gap-x-2  sm:gap-y-6">
         {miniaturas?.map((p) => {
           return (
             <div>
-              <div className="grid font-title text-sm text-third">
+              <div className="grid text-sm text-third">
                 <Link href={`/${p.portada.idProyecto}`}>
                   <a>
                     <Image
@@ -52,7 +52,7 @@ export default function MostrarProyectos() {
                   </a>
                 </Link>
                 <div>
-                  <p className="text-secondary text-lg transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
+                  <p className="text-black text-lg font-bold transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
                     {p.nombre}
                   </p>
                   <p>{p.categoria}</p>
