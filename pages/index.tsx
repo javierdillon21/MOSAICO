@@ -127,10 +127,9 @@ export default function Inicio() {
           ref={linearref}
           className="flex border-b border-opacity-5 w-full"
         ></div>
-        <button
-          className="flex absolute bottom-0 right-0 h-12 w-12 items-center justify-center"
+        <span
+          className="flex absolute bottom-0 right-0 h-12 w-12 items-center justify-center transition duration-500 ease-in-out transform hover:scale-110 hover:bg-secondary"
           onClick={(e) => {
-            e.preventDefault();
             // clearTimeout(timerID);
             setPosicion(
               posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
@@ -143,12 +142,10 @@ export default function Inicio() {
             size="lg"
             color="white"
           />
-        </button>
-        <button
-          className="flex absolute bottom-0 left-0 h-12 w-12 items-center justify-center"
-          disabled={false}
+        </span>
+        <span
+          className="flex absolute bottom-0 left-0 h-12 w-12 items-center justify-center transition duration-500 ease-in-out transform hover:scale-110 hover:bg-secondary"
           onClick={(e) => {
-            e.preventDefault();
             // clearTimeout(timerID);
 
             setPosicion(
@@ -159,7 +156,7 @@ export default function Inicio() {
           }}
         >
           <FontAwesomeIcon icon="arrow-left" size="lg" color="white" />
-        </button>
+        </span>
       </div>
     </>
   );

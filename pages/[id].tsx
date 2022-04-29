@@ -82,7 +82,7 @@ export default function GetProyecto() {
   if (!proyecto) return <p> </p>; // elemento de carga.
 
   return (
-    <div className="flex flex-col w-screen font-title mt-24 md:mt-8 lg:mt-24">
+    <div className="flex flex-col w-screen font-title pt-8 md:mt-8 lg:mt-24">
       <div
         id="Encabezado"
         className="flex flex-col lg:my-8 mx-4 lg:ml-48 mb-4 gap-7 font-title leading-5"
