@@ -71,6 +71,7 @@ module.exports = {
         "90p": "90%",
         "92p": "92%",
         "88p": "88%",
+        card: "500px",
       },
       width: {
         tabsbox: "600px",

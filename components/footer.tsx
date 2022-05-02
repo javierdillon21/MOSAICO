@@ -1,32 +1,59 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div id="Footer" className="flex items-center h-footer justify-center">
-        <Image
-          src="/LOGO MOSAICO MOD COLOR.png"
-          width={195}
-          height={67}
-        />
-        <Link href="/">
-            <Image
-              src="/fb-logo.png"
-              width={26}
-              height={26}
-            />
-          </Link>
-          <Link href="/">
-            <Image
-              src="/insta-logo.png"
-              width={26}
-              height={26}
+    <div
+      id="Footer"
+      className="flex flex-row items-center h-footer md:h-60 bg-third p-4 gap-y-2 justify-around md:justify-between md:px-10"
+    >
+      <span className="text-gray-100 text-xs md:text-lg">
+        {/* <span className="flex h-32 w-32">
+          <Image
+            src="/logos_mosaico/blanco.png"
+            objectFit="cover"
+            height={500}
+            width={500}
+          />
+        </span> */}
+        <p className="text-gray-100 font-bold">CONTACTO</p>
+        <p>Guayaquil, Ecuador.</p>
+        <p>Telf.: (+593) 0996192074</p>
+        <p>mosaicogrupoarquitectonico@gmail.com</p>
+      </span>
 
-            />
-          </Link>
-      </div>
-      <div className="flex h-3 w-auto bg-primary"></div>
-    </footer>
+      <span className="flex justify-center items-center gap-6 md:text-2xl md:gap-14">
+        <Link href="https://www.facebook.com/MOSAICO-Arquitectura-y-Dise%C3%B1o-104336595514024/?ref=pages_you_manage">
+          <FontAwesomeIcon
+            icon={["fab", "facebook"]}
+            stroke="1"
+            size="lg"
+            color="white"
+          />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon
+            icon={["fab", "instagram"]}
+            stroke="1"
+            size="lg"
+            color="white"
+          />
+        </Link>
+        <Link href="/">
+          <FontAwesomeIcon
+            icon={["fab", "whatsapp"]}
+            stroke="1"
+            size="lg"
+            color="white"
+          />
+        </Link>
+      </span>
+
+      {/* <span className="text-gray-100 text-xs">
+        ©Todos lo derechos reservados.{" "}
+        <a className="text-secondary">Mosaico Grupo Arquitectónico</a>
+      </span> */}
+    </div>
   );
 }

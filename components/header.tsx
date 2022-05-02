@@ -36,7 +36,7 @@ export default function Header() {
       >
         <div
           id="PrimaryTabs"
-          className="grid grid-cols-5 gap-14 w-auto place-content-center justify-items-center items-center text-center"
+          className="grid grid-cols-4 gap-14 w-auto place-content-center justify-items-center items-center text-center"
         >
           <Link href="/">
             <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
@@ -53,12 +53,8 @@ export default function Header() {
               Sobre Nosotros
             </a>
           </Link>
-          <Link href="/">
-            <a className="flex transition all duration-500 ease-in-out hover:text-secondary">
-              Contacto
-            </a>
-          </Link>
-          <Link href="/">
+
+          <Link href="/nuestros_servicios">
             <a className="transition-all duration-500 ease-in-out hover:text-secondary text-center">
               Nuestros Servicios
             </a>
@@ -101,16 +97,13 @@ export default function Header() {
                 </a>
               )}
             </Menu.Item>
+
             <Menu.Item>
               {({ active }) => (
-                <a className={`${active && "bg-blue-500"}`} href="/">
-                  Contacto
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a className={`${active && "bg-blue-500"}`} href="/">
+                <a
+                  className={`${active && "bg-blue-500"}`}
+                  href="/nuestros_servicios"
+                >
                   Nuestros Servicios
                 </a>
               )}

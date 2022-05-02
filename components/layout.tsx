@@ -15,12 +15,12 @@ export default function Layout(props: { children: React.ReactElement }) {
   }, [router]);
   return (
     <div
-      className={`flex flex-col w-screen ${
+      className={`relative flex flex-col w-screen ${
         isHomePage ? "h-screen" : "min-h-screen"
       } font-raleway`}
     >
       <Header />
-      <main className={`flex w-full h-screen ${isHomePage ? "" : "md:py-8"}`}>
+      <main className={`flex w-full flex-1  ${isHomePage ? "" : "md:py-8"}`}>
         {props.children}
       </main>
       <Footer></Footer>
