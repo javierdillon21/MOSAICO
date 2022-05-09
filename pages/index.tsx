@@ -115,7 +115,7 @@ export default function Inicio() {
           </Link>
           <span
             ref={descriptionref}
-            className="flex w-3/4 text-sm font-normal text-gray-50 text-center md:text-left"
+            className="flex w-3/4 text-sm lg:text-xl font-normal text-gray-50 text-center md:text-left"
           >
             <p className="flex w-full">{carrusel[posicion].descripcion}</p>
           </span>
@@ -136,12 +136,7 @@ export default function Inicio() {
             );
           }}
         >
-          <FontAwesomeIcon
-            icon="arrow-right"
-            stroke="1"
-            size="lg"
-            color="white"
-          />
+          <FontAwesomeIcon icon="arrow-right" size="2x" color="white" />
         </span>
         <span
           className="flex absolute bottom-0 left-0 h-12 w-12 items-center justify-center transition duration-500 ease-in-out transform hover:scale-110 hover:bg-secondary"
@@ -155,7 +150,7 @@ export default function Inicio() {
             );
           }}
         >
-          <FontAwesomeIcon icon="arrow-left" size="lg" color="white" />
+          <FontAwesomeIcon icon="arrow-left" size="2x" color="white" />
         </span>
       </div>
     </>

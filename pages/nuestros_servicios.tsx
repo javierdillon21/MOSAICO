@@ -23,21 +23,25 @@ export default function AboutUs() {
         >
           <span className="flex w-full h-1/2">
             <Image
-              src="/modelado3d.jpg"
+              src="/modelado1.png"
               objectFit="cover"
               width={2000}
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 overflow-auto">
-            <p className="font-bold text-xl md:text-3xl">Modelado 3D</p>
-            <p className="text-sm text-third md:text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled t sheets containing Lorem Ipsum passages, and
-              more recently with desktop publishing software like Aldus
-              PageMaker including versions of Lorem Ipsum.
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
+            <p className="font-bold text-xl md:text-3xl">
+              Modelado 3D
+              <p className="font-light text-sm md:text-lg text-third">
+                Del 2D al 3D. Materializa y da volumen a tus obras.
+              </p>
+            </p>
+
+            <p className="text-sm text-gray-700 md:text-xl">
+              Maquetado digital de todo tipo de escenario arquitectónico:
+              residenciales, comerciales, institucionales, interiores y
+              exteriores, prototipado de viviendas para promoción inmobiliaria,
+              y mobiliarios a medida; proyectos académicos y/o profesionales.
             </p>
           </span>
         </div>
@@ -53,17 +57,18 @@ export default function AboutUs() {
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 overflow-auto">
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
             <p className="font-bold text-xl md:text-3xl">
               Renderizado Fotorealista
+              <p className="font-light text-sm md:text-lg text-third">
+                Concreta detalles, acabados y texturas que incrementen el valor
+                de tus proyectos.{" "}
+              </p>
             </p>
-            <p className="text-sm text-third md:text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambntly with desktop publishing software like Aldus
-              PageMaker including versions of Lorem Ipsum. 500s, when an unknown
-              printer took a galley of type and scrambntly with deskto
+            <p className="text-sm text-gray-700 md:text-xl">
+              Representación de espacios, ambientes y proyectos de alta calidad
+              de detalle y realismo. Servicio para estudiantes de arquitectura,
+              profesionales independientes y constructoras.
             </p>
           </span>
         </div>
@@ -73,23 +78,24 @@ export default function AboutUs() {
         >
           <span className="flex w-full h-1/2">
             <Image
-              src="/renderizado.jpg"
+              src="/construccion.jpg"
               objectFit="cover"
+              objectPosition={"top"}
               width={2000}
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 overflow-auto">
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
             <p className="font-bold text-xl md:text-3xl">
-              Renderizado Fotorealista
+              Diseño y Construcción
+              <p className="font-light text-sm md:text-lg text-third">
+                Construye sobre buenas bases y al mejor costo del mercado.
+              </p>
             </p>
-            <p className="text-sm text-third md:text-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambledof Lorem Ipsum. 500s, when an unknown printer
-              took a galley of type and scrambntly with deskto 500s, when an
-              unknown printer took a galley of type and scrambntly with deskto
+            <p className="text-sm text-gray-700 md:text-xl">
+              Asesoramiento profesional sobre planificación, presupuesto,
+              dirección de obra, construcción, ampliación y remodelación de
+              proyectos en Guayaquil, Ecuador.
             </p>
           </span>
         </div>

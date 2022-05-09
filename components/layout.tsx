@@ -20,7 +20,7 @@ export default function Layout(props: { children: React.ReactElement }) {
       } font-raleway`}
     >
       <Header />
-      <main className={`flex w-full flex-1  ${isHomePage ? "" : "md:py-8"}`}>
+      <main className={`flex w-full flex-1  ${isHomePage ? "" : "pb-8"}`}>
         {props.children}
       </main>
       <Footer></Footer>
