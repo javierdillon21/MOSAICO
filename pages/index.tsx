@@ -83,12 +83,12 @@ export default function Inicio() {
   // }, [posicion, divref]);
 
   if (!carrusel) return <></>;
-  // var timerID = setTimeout(() => {
-  //   setPosicion(
-  //     posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
-  //   );
-  // }, 10000);
-  // console.log(timerID);
+  var timerID = setTimeout(() => {
+    setPosicion(
+      posicion + 1 == (carrusel as Carrusel).length ? 0 : posicion + 1
+    );
+  }, 8000);
+  console.log(timerID);
   return (
     <>
       {/* <Carousel carousel={carrusel}></Carousel> */}
@@ -127,7 +127,7 @@ export default function Inicio() {
           ref={linearref}
           className="flex border-b border-opacity-5 w-full"
         ></div>
-        <span
+        {/* <span
           className="flex absolute bottom-0 right-0 h-12 w-12 items-center justify-center transition duration-500 ease-in-out transform hover:scale-110 hover:bg-secondary"
           onClick={(e) => {
             // clearTimeout(timerID);
@@ -151,7 +151,7 @@ export default function Inicio() {
           }}
         >
           <FontAwesomeIcon icon="arrow-left" size="2x" color="white" />
-        </span>
+        </span> */}
       </div>
     </>
   );
