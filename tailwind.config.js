@@ -20,6 +20,17 @@ module.exports = {
         secondary: "#ffed4a",
         danger: "#e3342f",
       }),
+      screens: {
+        tablet: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        laptop: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        fullhd: "1920px",
+        "2k": "2560px",
+        "4k": "3840px",
+      },
       brightness: {
         10: ".1",
         25: ".25",
@@ -57,6 +68,7 @@ module.exports = {
         socialmediabox: "27px",
         footer: "108px",
         portada: "850px",
+        cardsxl: "700px",
         pl1: "1076px",
         pl1R: "600px",
         pl2: "950px",
@@ -72,6 +84,7 @@ module.exports = {
         "92p": "92%",
         "88p": "88%",
         card: "500px",
+        cardsm: "400px",
       },
       width: {
         tabsbox: "600px",

@@ -39,25 +39,23 @@ export default function MostrarProyectos() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-5/6 gap-x-2  sm:gap-y-6">
         {miniaturas?.map((p) => {
           return (
-            <div>
+            <div key={`id:${p.nombre}`}>
               <div className="grid text-sm text-third">
                 <Link href={`/${p.portada.idProyecto}`}>
-                  <a>
-                    <Image
-                      className="object-scale-down object-center transition duration-500 ease-in-out transform hover:scale-110"
-                      src={p.portada.url}
-                      width={p.portada.dimensions.width}
-                      height={p.portada.dimensions.height}
-                    />
-                  </a>
+                  <Image
+                    className="object-scale-down object-center transition duration-500 ease-in-out transform hover:scale-110"
+                    src={p.portada.url}
+                    width={p.portada.dimensions.width}
+                    height={p.portada.dimensions.height}
+                  />
                 </Link>
-                <div>
+                <section>
                   <p className="text-black text-lg font-bold transition duration-500 ease-in-out transform hover:translate-x-3.5 hover:scale-110">
                     {p.nombre}
                   </p>
                   <p>{p.categoria}</p>
                   <p>{p.ambiente}</p>
-                </div>
+                </section>
               </div>
             </div>
           );

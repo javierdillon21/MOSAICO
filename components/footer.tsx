@@ -51,7 +51,7 @@ export default function Footer() {
             color="white"
           />
         </Link>
-        <Link href="/">
+        <Link href="https://wa.me/message/3TQTZWZSJDTUL1">
           <FontAwesomeIcon
             icon={["fab", "whatsapp"]}
             stroke="1"

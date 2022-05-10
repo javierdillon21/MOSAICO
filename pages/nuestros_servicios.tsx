@@ -15,11 +15,11 @@ export default function AboutUs() {
 
       <section
         id="cartillas"
-        className="flex flex-col md:flex-row w-11/12 md:w-2/3 h-auto gap-8 items-center justify-start"
+        className="flex flex-col md:flex-row w-11/12 2k:w-2/3 h-auto gap-8 items-center justify-start"
       >
         <div
           id="modelado 3D"
-          className="flex flex-col w-full h-96 md:h-portada rounded-sm border border-gray-200 gap-6"
+          className="flex flex-col w-full h-cardsm fullhd:h-cardsxl rounded-sm border border-gray-200 gap-6"
         >
           <span className="flex w-full h-1/2">
             <Image
@@ -29,7 +29,7 @@ export default function AboutUs() {
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4">
             <p className="font-bold text-xl md:text-3xl">
               Modelado 3D
               <p className="font-light text-sm md:text-lg text-third">
@@ -47,7 +47,7 @@ export default function AboutUs() {
         </div>
         <div
           id="renderizado"
-          className="flex flex-col w-full h-96 md:h-portada rounded-sm border border-gray-200 gap-6"
+          className="flex flex-col w-full h-cardsm fullhd:h-cardsxl rounded-sm border border-gray-200 gap-6"
         >
           <span className="flex w-full h-1/2">
             <Image
@@ -57,9 +57,9 @@ export default function AboutUs() {
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4">
             <p className="font-bold text-xl md:text-3xl">
-              Renderizado Fotorealista
+              Renderizado Fotorrealista
               <p className="font-light text-sm md:text-lg text-third">
                 Concreta detalles, acabados y texturas que incrementen el valor
                 de tus proyectos.{" "}
@@ -73,8 +73,8 @@ export default function AboutUs() {
           </span>
         </div>
         <div
-          id="renderizado"
-          className="flex flex-col w-full h-96 md:h-portada rounded-sm border border-gray-200 gap-6"
+          id="construccion"
+          className="flex flex-col w-full h-cardsm fullhd:h-cardsxl rounded-sm border border-gray-200 gap-6"
         >
           <span className="flex w-full h-1/2">
             <Image
@@ -85,7 +85,7 @@ export default function AboutUs() {
               height={1000}
             />
           </span>
-          <span className="flex flex-col w-full px-4 gap-y-4 pb-4 overflow-auto">
+          <span className="flex flex-col w-full px-4 gap-y-4 pb-4">
             <p className="font-bold text-xl md:text-3xl">
               Diseño y Construcción
               <p className="font-light text-sm md:text-lg text-third">
