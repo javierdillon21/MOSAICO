@@ -116,12 +116,12 @@ export default function GetProyecto() {
           </div>
         </div>
       </div>
-      <div id="Portada" className="flex w-auto md:h-portada">
+      <div id="Portada" className="flex justify-center">
         <Image
-          className="object-cover object-center"
           src={proyecto.encabezado.portada.url}
-          width={4096}
-          height={2160}
+          width={proyecto.encabezado.portada.dimensions.width}
+          height={proyecto.encabezado.portada.dimensions.height}
+          quality={100}
         />
       </div>
 
@@ -183,6 +183,7 @@ function Plantilla1(props: { plantilla: PlantillaMultimedia }) {
           src={img.url}
           width={img.dimensions.width}
           height={img.dimensions.height}
+          quality={100}
         />
       </div>
     );
@@ -204,6 +205,7 @@ function Plantilla1R(props: { plantilla: PlantillaMultimedia }) {
           src={img.url}
           width={img.dimensions.width}
           height={img.dimensions.height}
+          quality={100}
         />
 
         <p className="text-justify self-center">{props.plantilla.resena}</p>
@@ -228,6 +230,7 @@ function Plantilla2(props: { plantilla: PlantillaMultimedia }) {
                 src={img.url}
                 width={img.dimensions.width}
                 height={img.dimensions.height}
+                quality={100}
               />
             </div>
           );
@@ -254,6 +257,7 @@ function Plantilla2R(props: { plantilla: PlantillaMultimedia }) {
                 src={img.url}
                 width={img.dimensions.width}
                 height={img.dimensions.height}
+                quality={100}
               />
             </div>
           );
@@ -282,6 +286,7 @@ function Plantilla3(props: { plantilla: PlantillaMultimedia }) {
                 src={img.url}
                 width={img.dimensions.width}
                 height={img.dimensions.height}
+                quality={100}
               />
             </div>
           );
@@ -322,6 +327,7 @@ function Plantilla3R(props: { plantilla: PlantillaMultimedia }) {
                   src={img.url}
                   width={img.dimensions.width}
                   height={img.dimensions.height}
+                  quality={100}
                 />
               </div>
             );
@@ -333,6 +339,7 @@ function Plantilla3R(props: { plantilla: PlantillaMultimedia }) {
               src={props.plantilla.imagenes[2].url}
               width={props.plantilla.imagenes[2].dimensions.width}
               height={props.plantilla.imagenes[2].dimensions.height}
+              quality={100}
             />
           </div>
         </div>
@@ -357,6 +364,7 @@ function Plantilla4(props: { plantilla: PlantillaMultimedia }) {
                 src={img.url}
                 width={img.dimensions.width}
                 height={img.dimensions.height}
+                quality={100}
               />
             </div>
           );
@@ -383,6 +391,7 @@ function Plantilla4R(props: { plantilla: PlantillaMultimedia }) {
                 src={img.url}
                 width={img.dimensions.width}
                 height={img.dimensions.height}
+                quality={100}
               />
             </div>
           );
