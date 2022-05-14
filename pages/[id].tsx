@@ -122,6 +122,7 @@ export default function GetProyecto() {
           width={proyecto.encabezado.portada.dimensions.width}
           height={proyecto.encabezado.portada.dimensions.height}
           quality={100}
+          unoptimized={true}
         />
       </div>
 
