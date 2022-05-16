@@ -118,14 +118,20 @@ export default function GetProyecto() {
       </div>
       <div id="Portada" className="flex justify-center">
         <Image
-          src={proyecto.encabezado.portada.url}
+          src={proyecto.encabezado.portada.url.replace(
+            "?auto=compress,format",
+            ""
+          )}
           width={proyecto.encabezado.portada.dimensions.width}
           height={proyecto.encabezado.portada.dimensions.height}
           quality={100}
-          unoptimized={true}
         />
       </div>
-
+      {/* <img
+        src={proyecto.encabezado.portada.url.replace("?auto=compress,format",'')}
+        // width={proyecto.encabezado.portada.dimensions.width}
+        // height={proyecto.encabezado.portada.dimensions.height}
+      ></img> */}
       <div
         id="Descripcion"
         className="flex flex-col w-auto my-8 justify-center items-center"
