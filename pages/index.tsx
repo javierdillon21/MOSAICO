@@ -108,11 +108,11 @@ export default function Inicio() {
           ref={titleref}
           className="flex flex-col w-full items-center gap-y-4 "
         >
-          <Link href={`/${carrusel[posicion].idProyecto}`}>
-            <p className="flex w-3/4 text-5xl md:text-7xl animate-fade-in-down font-black text-center justify-center md:justify-start font-poppins md:text-left">
-              {carrusel[posicion].nombre}
-            </p>
-          </Link>
+          <p className="flex w-3/4 text-5xl md:text-7xl animate-fade-in-down font-black text-center justify-center md:justify-start font-poppins md:text-left">
+            {carrusel[posicion].nombre}
+          </p>
+          {/* <Link href={`/${carrusel[posicion].idProyecto}`}>
+          </Link> */}
           <span
             ref={descriptionref}
             className="flex w-3/4 text-sm lg:text-xl font-normal text-gray-50 text-center md:text-left"
