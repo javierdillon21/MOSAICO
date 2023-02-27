@@ -37,7 +37,7 @@
     "react-dom": "17.0.1",
     "react-responsive-carousel": "^3.2.23",
     "react-scroll": "^1.8.2",
-    "tw-elements": "*"
+    "tw-elements": "^1.0.0-beta1"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.3.1",

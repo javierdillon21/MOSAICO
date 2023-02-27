@@ -1,58 +1,46 @@
-import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
-import { clearTimeout, setTimeout } from "timers";
+import Image from "next/image";
+import Carrusell from "../components/carousel";
+import { useState, useEffect, useRef } from "react";
+import cliente from "../src/prismic/prismic-configuration";
+import { Carrusel, Imagen, ResultsPrismic, Slide, Texto } from "../src/data";
+import Prismic from "@prismicio/client";
 
-export default function Test() {
-  const arr = ["red", "green", "blue"];
-  const [pos, setpos] = useState(0);
-  const divref = useRef(null);
-  const titleref = useRef(null);
-
+export default function Inicio() {
+  const [carrusel, setCarrusel] = useState<Carrusel>();
   useEffect(() => {
-    gsap.fromTo(
-      titleref.current,
-      { opacity: 0, ease: "power2.in", x: 100 },
-      {
-        duration: 1,
-        opacity: 1,
-        delay: 1,
-        x: 0,
-      }
-    );
-  }, [pos]);
+    cliente()
+      .query(Prismic.Predicates.at("document.id", "YKBmhRIAACEAwG_i"))
+      .then(function (response: { results: ResultsPrismic }) {
+        // response is the response object, response.results holds the documents
+        const docCarrusel = response.results[0];
+        console.log("RESPONSE:", docCarrusel);
 
-  useEffect(() => {
-    gsap.to(divref.current, { opacity: 100 });
-  }, [pos]);
-
-  useEffect(() => {
-    gsap.from(divref.current, { opacity: 0, duration: 12 });
-  }, [pos]);
-
-  const time = setTimeout(() => {
-    console.log("time");
-    setpos(pos + 1);
-  }, 2000);
+        var arr = docCarrusel.data.body.map((slice) => {
+          var img: Imagen = {
+            dimensions: slice.primary.portada.dimensions,
+            url: slice.primary.portada.url,
+          };
+          var sl: Slide = {
+            portada: img,
+            nombre: slice.primary.nombre[0].text,
+            categoria: slice.primary.categoria,
+            descripcion: FormatearTexto(slice.primary.descripcion),
+            idProyecto: slice.primary.link.id,
+          };
+          return sl;
+        });
+        setCarrusel(arr);
+      });
+  }, []);
+  
+  if (!carrusel) return <></>;
   return (
     <>
-      {/* {arr && (
-        <div
-          ref={divref}
-          className={`absolute flex h-36 w-36 border bg-${arr[pos]}-100`}
-          onClick={() => setpos(pos + 1 == arr.length ? 0 : pos + 1)}
-        ></div>
-      )}
-      <div ref={titleref} className="absolute bottom-0 text-6xl">
-        {arr[pos]}
-      </div> */}
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          clearTimeout(time);
-        }}
-      >
-        cancelar
-      </button>
+     <Carrusell carousel={carrusel}/>
     </>
   );
+}
+function FormatearTexto(arr: Array<Texto>) {
+  const strArr = arr.map((obj) => obj.text);
+  return strArr.join("\n");
 }

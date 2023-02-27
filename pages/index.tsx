@@ -4,9 +4,6 @@ import cliente from "../src/prismic/prismic-configuration";
 import { Carrusel, Imagen, ResultsPrismic, Slide, Texto } from "../src/data";
 import { animateScroll as scroll } from "react-scroll";
 import Prismic from "@prismicio/client";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Carousel from "../components/carousel";
 import gsap from "gsap";
 
 export default function Inicio() {
@@ -58,29 +55,6 @@ export default function Inicio() {
       }
     );
   }, [posicion]);
-
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     titleref.current,
-  //     { opacity: 0, ease: "power2.in", y: -25 },
-  //     {
-  //       duration: 1.8,
-  //       opacity: 1,
-  //       delay: 2,
-  //       y: 0,
-  //     }
-  //   );
-  //   gsap.fromTo(
-  //     descriptionref.current,
-  //     { opacity: 0, ease: "power2.in", y: 25 },
-  //     {
-  //       duration: 1.8,
-  //       opacity: 1,
-  //       delay: 2.5,
-  //       y: 0,
-  //     }
-  //   );
-  // }, [posicion, divref]);
 
   if (!carrusel) return <></>;
   var timerID = setTimeout(() => {
